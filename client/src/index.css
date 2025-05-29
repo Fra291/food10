@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Apple-inspired color palette */
+  --background: 210 20% 98%; /* #F8F9FA - Ultra light gray */
+  --foreground: 212 12% 6%; /* #1C1C1E - Deep black */
+  --muted: 210 17% 95%; /* #F2F2F7 - Apple light gray */
+  --muted-foreground: 215 25% 27%; /* #3A3A3C - Medium gray */
+  --popover: 0 0% 100%; /* #FFFFFF */
+  --popover-foreground: 212 12% 6%; /* #1C1C1E */
+  --card: 0 0% 100%; /* #FFFFFF - Pure white */
+  --card-foreground: 212 12% 6%; /* #1C1C1E */
+  --border: 213 20% 90%; /* #E5E5EA - Light border */
+  --input: 213 20% 90%; /* #E5E5EA */
+  --primary: 211 100% 50%; /* #007AFF - iOS Blue */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 137 92% 53%; /* #34C759 - iOS Green */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --accent: 210 17% 95%; /* #F2F2F7 */
+  --accent-foreground: 212 12% 6%; /* #1C1C1E */
+  --destructive: 5 85% 63%; /* #FF3B30 - iOS Red */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 211 100% 50%; /* #007AFF */
+  --radius: 1rem; /* More rounded corners like iOS */
+  --chart-1: 211 100% 50%; /* #007AFF - iOS Blue */
+  --chart-2: 137 92% 53%; /* #34C759 - iOS Green */
+  --chart-3: 35 100% 50%; /* #FF9500 - iOS Orange */
+  --chart-4: 5 85% 63%; /* #FF3B30 - iOS Red */
+  --chart-5: 271 68% 58%; /* #AF52DE - iOS Purple */
+}
+
+.dark {
+  /* Apple Dark Mode colors */
+  --background: 0 0% 0%; /* #000000 - True black */
+  --foreground: 0 0% 98%; /* #FAFAFA - Near white */
+  --muted: 215 25% 27%; /* #3A3A3C - Dark medium gray */
+  --muted-foreground: 217 19% 67%; /* #AEAEB2 - Light gray */
+  --popover: 210 11% 3%; /* #1C1C1E - Dark gray */
+  --popover-foreground: 0 0% 98%; /* #FAFAFA */
+  --card: 210 11% 3%; /* #1C1C1E - Dark gray */
+  --card-foreground: 0 0% 98%; /* #FAFAFA */
+  --border: 215 25% 27%; /* #3A3A3C */
+  --input: 215 25% 27%; /* #3A3A3C */
+  --primary: 211 100% 50%; /* #007AFF - iOS Blue stays same */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 137 92% 53%; /* #34C759 - iOS Green */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --accent: 215 25% 27%; /* #3A3A3C */
+  --accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --destructive: 5 85% 63%; /* #FF3B30 - iOS Red */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 211 100% 50%; /* #007AFF */
+  --chart-1: 211 100% 50%; /* #007AFF - iOS Blue */
+  --chart-2: 137 92% 53%; /* #34C759 - iOS Green */
+  --chart-3: 35 100% 50%; /* #FF9500 - iOS Orange */
+  --chart-4: 5 85% 63%; /* #FF3B30 - iOS Red */
+  --chart-5: 271 68% 58%; /* #AF52DE - iOS Purple */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Mobile viewport fix */
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+    
+    body {
+      -webkit-text-size-adjust: 100%;
+      font-size: 16px;
+    }
+    
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  /* Simple mobile-friendly app styles */
+  .app-container {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .app-header {
+    width: 100%;
+    border-bottom: 1px solid hsl(var(--border));
+    background: hsl(var(--background));
+    z-index: 50;
+  }
+
+  .app-content {
+    width: 100%;
+    background: hsl(var(--muted) / 0.3);
+    padding-bottom: 100px;
+  }
+
+  /* Custom scrollbar for mobile-like experience */
+  .app-content::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .app-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .app-content::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 1px;
+  }
+
+  /* Apple-style card design */
+  .mobile-card {
+    @apply border-0 bg-card text-card-foreground;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .mobile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Enhanced button styles */
+  .app-button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  /* Floating action button */
+  .fab {
+    @apply fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 40;
+  }
+
+  /* Safe area handling for mobile */
+  @supports (padding: max(0px)) {
+    .safe-area-top {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+    
+    .safe-area-bottom {
+      padding-bottom: max(5rem, env(safe-area-inset-bottom));
+    }
+  }
+
+  /* Bottom navigation styles */
+  .bottom-nav {
+    height: 4rem;
+    background: hsl(var(--background));
+    border-top: 1px solid hsl(var(--border));
+    backdrop-filter: blur(8px);
+  }
+}

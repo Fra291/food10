@@ -1,0 +1,95 @@
+2025-05-29T07:19:07Z info: Deployment: 1ecaefa7-a238-4dfd-9e9b-1a440924ca3e
+2025-05-29T07:19:07Z info: Connecting to builder
+2025-05-29T07:19:11Z info: Builder connected
+2025-05-29T07:19:11Z info: Installing packages
+--> npm install
+
+
+up to date, audited 720 packages in 4s
+
+74 packages are looking for funding
+
+  run `npm fund` for details
+
+
+12 moderate severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+npm notice To update run: npm install -g npm@11.4.1
+npm notice
+
+2025-05-29T07:19:16Z info: Starting Build
+
+> rest-express@1.0.0 build
+> node deploy.js
+
+
+🚀 Building FoodTracker for deployment...
+
+📦 Building frontend...
+
+vite v5.4.19 building for production...
+
+transforming...
+
+✓ 1922 modules transformed.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /home/runner/workspace/client/src/lib/firebase.ts is dynamically imported by /home/runner/workspace/client/src/lib/queryClient.ts, /home/runner/workspace/client/src/lib/queryClient.ts but also statically imported by /home/runner/workspace/client/src/hooks/useAuth.ts, /home/runner/workspace/client/src/pages/landing.tsx, /home/runner/workspace/client/src/pages/settings.tsx, dynamic import will not move module into another chunk.
+
+
+rendering chunks...
+
+computing gzip size...
+
+dist/public/index.html                   1.54 kB │ gzip:   0.65 kB
+
+✓ built in 7.55s
+
+📦 Building backend...
+
+
+  dist/index.js  42.3kb
+
+⚡ Done in 26ms
+
+✅ Build completed successfully!
+
+📁 Files created:
+
+  ❌ Frontend: dist/public/ MISSING
+
+2025-05-29T07:19:30Z info: Pushing pid1 binary layer...
+2025-05-29T07:19:31Z info: Pushing hosting layer...
+2025-05-29T07:19:31Z info: Pushing Repl layer...
+2025-05-29T07:19:31Z info: Retrieved cached nix layer
+2025-05-29T07:19:31Z info: Created hosting layer
+2025-05-29T07:19:32Z info: Created pid1 binary layer
+2025-05-29T07:19:37Z info: Created Repl layer
+2025-05-29T07:19:37Z info: Pushed image manifest
+2025-05-29T07:19:38Z info: Pushed soci index manifest
+2025-05-29T07:19:42Z info: Creating Autoscale service
+❌ Backend file not found: /home/runner/workspace/dist/index.js
+🚀 Starting FoodTracker...
+> NODE_ENV=production node start.js
+❌ Backend file not found: /home/runner/workspace/dist/index.js
+  - Backend: /home/runner/workspace/dist/index.js ❌
+> rest-express@1.0.0 start
+> rest-express@1.0.0 start
+> NODE_ENV=production node start.js
+🚀 Starting FoodTracker...
+  - Frontend: /home/runner/workspace/dist/public ❌
+  - Backend: /home/runner/workspace/dist/index.js ❌
+command finished with error [sh -c npm run start]: exit status 1
+> NODE_ENV=production node start.js
+  - Backend: /home/runner/workspace/dist/index.js ❌

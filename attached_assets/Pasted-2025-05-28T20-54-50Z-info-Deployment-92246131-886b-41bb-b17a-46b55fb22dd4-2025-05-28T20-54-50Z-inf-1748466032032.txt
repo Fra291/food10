@@ -1,0 +1,257 @@
+2025-05-28T20:54:50Z info: Deployment: 92246131-886b-41bb-b17a-46b55fb22dd4
+2025-05-28T20:54:50Z info: Build: 8bff2e95-5293-48e0-99fb-74ea26740272
+2025-05-28T20:54:50Z info: Connecting to builder
+2025-05-28T20:54:50Z info: Deployment: 92246131-886b-41bb-b17a-46b55fb22dd4
+2025-05-28T20:54:50Z info: Build: 8bff2e95-5293-48e0-99fb-74ea26740272
+2025-05-28T20:54:50Z info: Connecting to builder
+2025-05-28T20:54:55Z info: Builder connected
+2025-05-28T20:54:55Z info: Installing packages
+--> npm install
+
+
+up to date, audited 720 packages in 4s
+
+74 packages are looking for funding
+
+  run `npm fund` for details
+
+
+12 moderate severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+npm notice To update run: npm install -g npm@11.4.1
+npm notice
+
+2025-05-28T20:54:59Z info: Starting Build
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js --external:express --external:drizzle-orm
+
+
+vite v5.4.19 building for production...
+
+transforming...
+
+✓ 1922 modules transformed.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /home/runner/workspace/client/src/lib/firebase.ts is dynamically imported by /home/runner/workspace/client/src/lib/queryClient.ts, /home/runner/workspace/client/src/lib/queryClient.ts but also statically imported by /home/runner/workspace/client/src/hooks/useAuth.ts, /home/runner/workspace/client/src/pages/landing.tsx, /home/runner/workspace/client/src/pages/settings.tsx, dynamic import will not move module into another chunk.
+
+
+rendering chunks...
+
+computing gzip size...
+
+../dist/public/index.html                   1.54 kB │ gzip:   0.65 kB
+
+../dist/public/assets/index-BgunBxzx.css   74.62 kB │ gzip:  12.73 kB
+
+../dist/public/assets/index-DcZV5Zlm.js   816.16 kB │ gzip: 237.41 kB
+
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+✓ built in 7.33s
+
+
+  dist/index.js  42.3kb
+
+⚡ Done in 19ms
+
+2025-05-28T20:55:11Z info: Pushing pid1 binary layer...
+2025-05-28T20:55:12Z info: Pushing Repl layer...
+2025-05-28T20:55:12Z info: Pushing hosting layer...
+2025-05-28T20:55:12Z info: Retrieved cached nix layer
+2025-05-28T20:55:12Z info: Created hosting layer
+2025-05-28T20:55:12Z info: Created pid1 binary layer
+2025-05-28T20:55:18Z info: Created Repl layer
+2025-05-28T20:55:18Z info: Pushed image manifest
+2025-05-28T20:55:19Z info: Pushed soci index manifest
+2025-05-28T20:55:24Z info: Creating Autoscale service
+node:internal/modules/cjs/loader:1228
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+  throw err;
+
+
+command finished with error [sh -c npm run start]: exit status 1
+> rest-express@1.0.0 start
+forwarding local port 5000 to external port 80 (mapped as 1104)
+    at node:internal/main/run_main_module:28:49 {
+Node.js v20.18.1
+  ^
+> NODE_ENV=production node dist/index.js
+starting up user application
+  ^
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+  requireStack: []
+command finished with error [sh -c npm run start]: exit status 1
+> rest-express@1.0.0 start
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+Node.js v20.18.1
+  throw err;
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+node:internal/modules/cjs/loader:1228
+  code: 'MODULE_NOT_FOUND',
+  throw err;
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+    at node:internal/main/run_main_module:28:49 {
+> rest-express@1.0.0 start
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+Node.js v20.18.1
+node:internal/modules/cjs/loader:1228
+  ^
+  code: 'MODULE_NOT_FOUND',
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+> rest-express@1.0.0 start
+> rest-express@1.0.0 start
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+
+}
+  requireStack: []
+Node.js v20.18.1
+}
+
+  code: 'MODULE_NOT_FOUND',
+
+  requireStack: []
+command finished with error [sh -c npm run start]: exit status 1
+command finished with error [sh -c npm run start]: exit status 1
+
+Node.js v20.18.1
+
+> NODE_ENV=production node dist/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+  requireStack: []
+
+
+  throw err;
+
+}
+> NODE_ENV=production node dist/index.js
+  ^
+Node.js v20.18.1
+node:internal/modules/cjs/loader:1228
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+
+}
+node:internal/modules/cjs/loader:1228
+Node.js v20.18.1
+
+    at node:internal/main/run_main_module:28:49 {
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.js
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+> NODE_ENV=production node dist/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+}
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+  throw err;
+  ^
+  requireStack: []
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+  requireStack: []
+  throw err;
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+> NODE_ENV=production node dist/index.js
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+> rest-express@1.0.0 start
+node:internal/modules/cjs/loader:1228
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+
+    at node:internal/main/run_main_module:28:49 {
+    at node:internal/main/run_main_module:28:49 {
+command finished with error [sh -c npm run start]: exit status 1
+command finished with error [sh -c npm run start]: exit status 1
+  code: 'MODULE_NOT_FOUND',
+  ^
+
+node:internal/modules/cjs/loader:1228
+node:internal/modules/cjs/loader:1228
+
+> NODE_ENV=production node dist/index.js
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+    at node:internal/main/run_main_module:28:49 {
+  throw err;
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+  ^
+  throw err;
+  code: 'MODULE_NOT_FOUND',
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+  code: 'MODULE_NOT_FOUND',
+  code: 'MODULE_NOT_FOUND',
+}
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+}
+Node.js v20.18.1
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+> NODE_ENV=production node dist/index.js
+}
+> rest-express@1.0.0 start
+    at node:internal/main/run_main_module:28:49 {
+
+    at node:internal/main/run_main_module:28:49 {
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+command finished with error [sh -c npm run start]: exit status 1
+  requireStack: []
+command finished with error [sh -c npm run start]: exit status 1
+  ^
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+> rest-express@1.0.0 start
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+  throw err;
+node:internal/modules/cjs/loader:1228
+> NODE_ENV=production node dist/index.js
+  requireStack: []
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+  ^
+Node.js v20.18.1
+command finished with error [sh -c npm run start]: exit status 1
+
+  code: 'MODULE_NOT_FOUND',
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+
+    at node:internal/main/run_main_module:28:49 {
+}
+  throw err;
+  ^
+Error: Cannot find module '/home/runner/workspace/dist/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at node:internal/main/run_main_module:28:49 {
+> rest-express@1.0.0 start
+node:internal/modules/cjs/loader:1228
+
+> NODE_ENV=production node dist/index.js
+  requireStack: []
+  code: 'MODULE_NOT_FOUND',
+Node.js v20.18.1
+command finished with error [sh -c npm run start]: exit status 1
+
+}
+    at Module._load (node:internal/modules/cjs/loader:1051:27)
+crash loop detected
+2025-05-28T20:56:27Z error: The deployment is crash looping. This can happen if the run command fails or exits immediately after starting. Check the logs for more information.
